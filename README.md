@@ -21,6 +21,8 @@ Type=notify
 NotifyAccess=all
 ```
 
+You can also configure TimeoutStartSec. Default value is 90s.
+
 ### Step 2: call library when your app is started
 
 Add maven dependency to your `pom.xml`.
@@ -47,3 +49,7 @@ public static void main(String[] args) {
 Java 8 is required.
 
 `mvn package`
+
+## Known issues
+
+This library doesn't support Spring Boot.

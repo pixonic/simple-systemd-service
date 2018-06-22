@@ -2,13 +2,13 @@
 
 ## Service startup problem
 
-If you run `systemctl start youservice.service`, systemd **doesn't wait** until your service actually started. This can cause problems if your application have slow initialization process. In this case systemd considers your application as started, but actually starting process in progress.
+If you run `systemctl start youservice.service`, systemd **doesn't wait** until your service is actually started. This can cause problems if your application have slow initialization process. In this case systemd considers your application as started, but actually starting process is in progress.
 
 ## Solution
 
 This library allows you to notify systemd system about your application is ready/started and systemd will wait until it happen. It uses linux systemd-notify tool to do it.
 
-The library is lightweight and **doesn't have any dependencies** on logging, JNA, JNI native code. It is **pure Java solution**.
+The library is lightweight and **doesn't have any dependencies** on logging, JNA, JNI native code. **It is pure Java solution**.
 
 ## Usage
 Two steps are required.
@@ -17,19 +17,19 @@ Add following lines to your service unit file.
 
 ```
 [Service]
-Type=nofity
+Type=notify
 NotifyAccess=all
 ```
 
 ### Step 2: call library when your app is started
 
-Add dependency to your `pom.xml`.
+Add maven dependency to your `pom.xml`.
 ```xml
-<dependcy>
+<dependency>
     <groupId>com.pixonic</groupId>
     <artifactId>simple-systemd-service</artifactId>
     <version>0.1</version>
-</dependcy>
+</dependency>
 ```
 
 And call it when your app is ready.

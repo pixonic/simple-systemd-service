@@ -3,6 +3,9 @@ package com.pixonic.simplesystemdservice;
 import java.io.IOException;
 
 public class Systemd {
+    /**
+     * Call this when your app is started.
+     */
     public static void sendReady() {
         try {
             Process process = new ProcessBuilder("systemd-notify", "--ready")

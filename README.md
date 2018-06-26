@@ -53,3 +53,5 @@ Java 8 is required.
 ## Known issues
 
 This library doesn't support Spring Boot.
+
+You should run your app as **root** because of a bug in systemd.

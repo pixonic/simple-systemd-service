@@ -30,7 +30,7 @@ Add maven dependency to your `pom.xml`.
 <dependency>
     <groupId>com.pixonic</groupId>
     <artifactId>simple-systemd-service</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
 </dependency>
 ```
 

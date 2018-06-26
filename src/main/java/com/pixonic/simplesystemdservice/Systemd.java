@@ -7,6 +7,7 @@ public class Systemd {
      * Call this when your app is started.
      */
     public static void sendReady() {
+        if (System.getenv("NOTIFY_SOCKET") == null) return;
         try {
             Process process = new ProcessBuilder("systemd-notify", "--ready")
                     .redirectOutput(ProcessBuilder.Redirect.INHERIT)
